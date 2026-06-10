@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+<title>Komentar Ulang Tahun</title>
+ <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        .box {
+            width: 300px;
+            background-color: #76c1dc;
+            border: 4px solid #48879f;
+            padding: 15px;
+            margin: 20px;
+            color: black;
+        }
+        input {
+            width: 90%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #2aa198;
+            color: white;
+            border: solid lightgray 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1b7f76;
+        }
+        .status {
+            margin-top: 10px;
+        }
+        .hasil {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <b>PHP</b> Sedang Berulang Tahun
+        <p id="hasil" class="hasil"></p>
+        <input type="text" id="komentar" placeholder="Komentar...">
+        <p id="status" class="status"></p>
+        <button onclick="kirimKomentar()">Komentar</button>
+    </div>
+
+    <script>
+        const input = document.getElementById("komentar");
+        const status = document.getElementById("status");
+        const hasil = document.getElementById("hasil");
+
+        input.addEventListener("input", function () {
+            if (input.value !== "") {
+                status.textContent = "Anda Sedang Mengetik...";
+            } else {
+                status.textContent = "";
+            }
+        });
+
+        function kirimKomentar() {
+            if (input.value !== "") {
+                hasil.innerHTML = "<b>JavaScript :</b> " + input.value;
+                input.value = "";
+                status.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>
