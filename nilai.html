@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Penginputan Nilai</title>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            background: khaki;
+            font-family: Times New Roman;
+            padding: 20px;
+        }
+
+        #hasil{
+            width: 250px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hasil"></div>
+
+    <h3>Inputkan Nilai</h3>
+
+    <input type="number" id="nilai">
+    <button id="cek">Nilai</button>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#cek").click(function(){
+
+                var nilai = $("#nilai").val();
+
+                // Nilai A
+                if(nilai >= 85){
+                    $("#hasil")
+                    .html("Mendapatkan Nilai A")
+                    .css("background","green")
+                    .show();
+
+                }
+
+                // Nilai B+
+                else if(nilai >= 75 && nilai <= 79){
+                    $("#hasil")
+                    .html("Mendapatkan Nilai B+")
+                    .css("background","orange")
+                    .show();
+
+                }
+
+                // Nilai C+
+                else if(nilai >= 60 && nilai <= 64){
+                    $("#hasil")
+                    .html("Mendapatkan Nilai C+")
+                    .css("background","gold")
+                    .show();
+
+                }
+
+                // Nilai E
+                else if(nilai < 50){
+                    $("#hasil")
+                    .html("Mendapatkan Nilai E")
+                    .css("background","red")
+                    .show();
+
+                }
+
+                // Selain ketentuan
+                else{
+                    $("#hasil")
+                    .html("Nilai Tidak Ada Dalam Ketentuan")
+                    .css("background","gray")
+                    .show();
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
